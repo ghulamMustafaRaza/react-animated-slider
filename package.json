@@ -2,14 +2,12 @@
   "name": "react-animated-slider",
   "version": "2.0.0",
   "description": "Animated slider component for react",
-  "main": "build/index.js",
-  "files": [
-    "build"
-  ],
+  "main": "release/index.js",
+  "files": ["build", "release"],
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.pages.js --mode development",
     "test": "jest",
-    "build": "webpack-cli --mode production",
+    "build": "webpack-cli --mode production && rm -rf release && mkdir release && cp build/index.js release",
     "lint": "eslint src",
     "predeploy": "webpack --mode production --config webpack.config.pages.js",
     "deploy": "gh-pages -d pages",
